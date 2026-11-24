@@ -309,7 +309,20 @@ section { position: relative; z-index: 1; }
 .tag-g  { background: rgba(52,211,153,0.1);   border: 1px solid rgba(52,211,153,0.25);   color: var(--green); }
 .tag-o  { background: rgba(251,146,60,0.1);   border: 1px solid rgba(251,146,60,0.25);   color: var(--orange); }
 .tag-y  { background: rgba(250,204,21,0.1);   border: 1px solid rgba(250,204,21,0.25);   color: var(--yellow); }
- 
+ /* CLICKABLE PROJECT LINKS */
+.project-link {
+  display: inline-block;
+  margin-top: 1.3rem;
+  color: var(--cyan);
+  font-size: 0.75rem;
+  text-decoration: none;
+  transition: 0.3s;
+}
+
+.project-link:hover {
+  color: var(--p2);
+  transform: translateX(5px);
+}
 /* PROJECTS */
 .projects-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(300px, 1fr)); gap: 1.5rem; }
 .proj-card {
@@ -337,6 +350,23 @@ section { position: relative; z-index: 1; }
 }
 .proj-desc { font-size: 0.78rem; color: var(--muted); line-height: 1.75; margin-bottom: 1.5rem; flex: 1; }
 .proj-tech { display: flex; flex-wrap: wrap; gap: 0.4rem; }
+  /* Clickable certification cards */
+a.cert-card {
+  color: inherit;
+  text-decoration: none;
+  cursor: none;
+}
+
+a.cert-card:hover .cert-name {
+  color: var(--cyan);
+}
+
+.cert-arrow {
+  margin-left: auto;
+  color: var(--cyan);
+  font-size: 0.9rem;
+  flex-shrink: 0;
+}
  
 /* CERTIFICATIONS */
 .cert-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(240px, 1fr)); gap: 1rem; }
@@ -483,8 +513,7 @@ footer span { color: var(--p2); }
   <div class="hero-inner">
     <div class="hero-eyebrow">Computer Science Engineer</div>
     <h1 class="hero-name">
-      <span class="line1">Kowsalya</span>
-      <span class="line2">devi M</span>
+      <span class="line1">Kowsalyadevi M</span>
     </h1>
     <div class="hero-sub">
       <span>B.E CSE @ KPRIET</span>
@@ -519,7 +548,7 @@ footer span { color: var(--p2); }
       <h2 class="s-title reveal">About <em>Me</em></h2>
       <div class="about-layout">
         <div class="about-text reveal">
-          <p>I'm a 2nd-year Computer Science student at <strong>KPR Institute of Engineering and Technology</strong>, Coimbatore, maintaining a strong CGPA of 8.5. My academic journey started with a stellar 94% in Bio-Maths at SPB Matric Hr. Sec. School.</p>
+          <p>I'm a  Computer Science student at <strong>KPR Institute of Engineering and Technology</strong>, Coimbatore, maintaining a strong CGPA of 8.5. My academic journey started with a stellar 94% in Bio-Maths at SPB Matric Hr. Sec. School.</p>
           <p>My core passion lies in <strong>Image Processing and Computer Vision</strong> — I love building systems that can see, understand, and react to the real world. From counting people in crowds to detecting ripe fruits on trees, I build things that matter.</p>
           <p>Beyond CV, I've explored <strong>full-stack web development</strong> with React and Node.js, and I enjoy the challenge of combining AI with practical, impactful applications.</p>
         </div>
@@ -533,11 +562,11 @@ footer span { color: var(--p2); }
             <div class="stat-lbl">Class 12 Score</div>
           </div>
           <div class="stat">
-            <div class="stat-num">7+</div>
+            <div class="stat-num">4</div>
             <div class="stat-lbl">Projects Built</div>
           </div>
           <div class="stat">
-            <div class="stat-num">11+</div>
+            <div class="stat-num">2</div>
             <div class="stat-lbl">Certifications</div>
           </div>
         </div>
@@ -587,19 +616,10 @@ footer span { color: var(--p2); }
           <div class="skill-cat">Databases</div>
           <div class="tags">
             <span class="tag tag-o">SQL</span>
-            <span class="tag tag-o">MongoDB</span>
+            
           </div>
         </div>
-        <div class="skill-card reveal" style="--bar-color: var(--p2)">
-          <div class="skill-icon-wrap" style="background:rgba(232,121,249,0.12)">🌐</div>
-          <div class="skill-cat">Web Stack</div>
-          <div class="tags">
-            <span class="tag tag-p">React</span>
-            <span class="tag tag-c">Node.js</span>
-            <span class="tag tag-o">JavaScript</span>
-            <span class="tag tag-p">PHP</span>
-          </div>
-        </div>
+       
         <div class="skill-card reveal" style="--bar-color: var(--yellow)">
           <div class="skill-icon-wrap" style="background:rgba(250,204,21,0.12)">🤖</div>
           <div class="skill-cat">Domains</div>
@@ -631,6 +651,11 @@ footer span { color: var(--p2); }
             <span class="tag tag-p">Python</span>
             <span class="tag tag-p">Deep Learning</span>
           </div>
+           <a href="https://github.com/Kowsalyadevi-M/Realtime-peoplecounting-yolov10"
+            target="_blank"
+            class="project-link">
+            View Project ↗
+           </a>
         </div>
         <div class="proj-card reveal">
           <div class="proj-emoji">✋</div>
@@ -641,16 +666,27 @@ footer span { color: var(--p2); }
             <span class="tag tag-p">Python</span>
             <span class="tag tag-g">IoT</span>
           </div>
+          <a href="https://lnkd.in/p/g9-MVW-e"
+            target="_blank"
+            class="project-link">
+            View Project ↗
+           </a>
+          
         </div>
         <div class="proj-card reveal">
           <div class="proj-emoji">🤖</div>
-          <div class="proj-title">Fruit Harvesting Robot</div>
+          <div class="proj-title">Automated fruit detection and Harvesting Robot</div>
           <p class="proj-desc">Automated robotic arm detecting, plucking, and dispatching ripe fruit — addressing labour challenges in agriculture through intelligent automation.</p>
           <div class="proj-tech">
             <span class="tag tag-c">OpenCV</span>
             <span class="tag tag-o">Arduino</span>
             <span class="tag tag-p">Python</span>
           </div>
+           <a href="https://lnkd.in/p/g4CUnSxT"
+            target="_blank"
+            class="project-link">
+            View Project ↗
+           </a>
         </div>
         <div class="proj-card reveal">
           <div class="proj-emoji">🏥</div>
@@ -661,37 +697,7 @@ footer span { color: var(--p2); }
             <span class="tag tag-c">Database</span>
             <span class="tag tag-g">AI</span>
           </div>
-        </div>
-        <div class="proj-card reveal">
-          <div class="proj-emoji">🎯</div>
-          <div class="proj-title">Custom Object Detection</div>
-          <p class="proj-desc">Trains AI to recognize specific user-defined items with high accuracy — focusing on target objects to enable intelligent, domain-specific automation.</p>
-          <div class="proj-tech">
-            <span class="tag tag-p">Deep Learning</span>
-            <span class="tag tag-p">Python</span>
-            <span class="tag tag-c">OpenCV</span>
-          </div>
-        </div>
-        <div class="proj-card reveal">
-          <div class="proj-emoji">📋</div>
-          <div class="proj-title">Exam Application Portal</div>
-          <p class="proj-desc">Web-based system for students to register and apply for exams. Streamlines registration, fee payment, and status updates in one polished platform.</p>
-          <div class="proj-tech">
-            <span class="tag tag-o">HTML</span>
-            <span class="tag tag-o">JavaScript</span>
-            <span class="tag tag-o">PHP</span>
-          </div>
-        </div>
-        <div class="proj-card reveal">
-          <div class="proj-emoji">💊</div>
-          <div class="proj-title">MediExpress</div>
-          <p class="proj-desc">Online medicine ordering platform with automatic prescription verification, real-time delivery tracking, and fake prescription prevention for safety and trust.</p>
-          <div class="proj-tech">
-            <span class="tag tag-p">React</span>
-            <span class="tag tag-c">Node.js</span>
-            <span class="tag tag-c">MongoDB</span>
-            <span class="tag tag-g">ML</span>
-          </div>
+          
         </div>
       </div>
     </div>
@@ -702,20 +708,60 @@ footer span { color: var(--p2); }
 <section id="certs">
   <div class="section-wrap">
     <div class="inner">
-      <div class="s-tag reveal"><span>//</span> credentials</div>
-      <h2 class="s-title reveal"><em>Certifications</em></h2>
+
+      <div class="s-tag reveal">
+        <span>//</span> credentials
+      </div>
+
+      <h2 class="s-title reveal">
+        <em>Certifications</em>
+      </h2>
+
       <div class="cert-grid">
-        <div class="cert-card reveal"><div class="cert-pip"></div><div><div class="cert-name">Java Programming</div><div class="cert-org">Great Learning</div></div></div>
-        <div class="cert-card reveal"><div class="cert-pip"></div><div><div class="cert-name">Web Scraping with Python</div><div class="cert-org">Great Learning</div></div></div>
-        <div class="cert-card reveal"><div class="cert-pip"></div><div><div class="cert-name">Power BI</div><div class="cert-org">Great Learning</div></div></div>
-        <div class="cert-card reveal"><div class="cert-pip"></div><div><div class="cert-name">Fundamentals of Cybersecurity</div><div class="cert-org">ZSCALER / Swayam+</div></div></div>
-        <div class="cert-card reveal"><div class="cert-pip"></div><div><div class="cert-name">SQL (Intermediate)</div><div class="cert-org">HackerRank</div></div></div>
-        <div class="cert-card reveal"><div class="cert-pip"></div><div><div class="cert-name">Web Development (PHP)</div><div class="cert-org">Nithra Apps Pvt. Ltd.</div></div></div>
-        <div class="cert-card reveal"><div class="cert-pip"></div><div><div class="cert-name">Cybersecurity Fundamentals</div><div class="cert-org">EC-Council</div></div></div>
-        <div class="cert-card reveal"><div class="cert-pip"></div><div><div class="cert-name">Practical Cybersecurity</div><div class="cert-org">NPTEL / Swayam</div></div></div>
-        <div class="cert-card reveal"><div class="cert-pip"></div><div><div class="cert-name">EF SET English Certificate</div><div class="cert-org">EF Education First</div></div></div>
-        <div class="cert-card reveal"><div class="cert-pip"></div><div><div class="cert-name">Machine Learning Crash Course</div><div class="cert-org">Google</div></div></div>
-        <div class="cert-card reveal"><div class="cert-pip"></div><div><div class="cert-name">Ultimate JavaScript String</div><div class="cert-org">CodeRed</div></div></div>
+
+        <!-- AWS Certification -->
+        <a href="https://lnkd.in/p/gFa2it3v"
+           target="_blank"
+           rel="noopener noreferrer"
+           class="cert-card reveal">
+
+          <div class="cert-pip"></div>
+
+          <div>
+            <div class="cert-name">
+              AWS Solutions Architect – Associate
+            </div>
+            <div class="cert-org">AWS</div>
+          </div>
+
+          <span class="cert-arrow">↗</span>
+        </a>
+
+       
+
+        
+        <!-- Nithra Apps Certification -->
+        <a href="https://lnkd.in/p/g8X3CDrS"
+           target="_blank"
+           rel="noopener noreferrer"
+           class="cert-card reveal">
+
+          <div class="cert-pip"></div>
+
+          <div>
+            <div class="cert-name">
+              Web Development (PHP)
+            </div>
+            <div class="cert-org">
+              Nithra Apps Pvt. Ltd.
+            </div>
+          </div>
+
+          <span class="cert-arrow">↗</span>
+        </a>
+
+       
+
       </div>
     </div>
   </div>
@@ -806,7 +852,7 @@ footer span { color: var(--p2); }
  
 <footer>
   <div class="footer-logo">KM_</div>
-  <p>Designed & built with 💜 by <span>Kowsalyadevi M</span> · 2025</p>
+  <p>Designed & built with 💜 by <span>Kowsalyadevi M</span> · 2026</p>
   <p style="margin-top:0.5rem">Computer Science Engineer · KPRIET, Coimbatore</p>
 </footer>
  
